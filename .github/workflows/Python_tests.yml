@@ -1,6 +1,5 @@
 # TODO: Line 14, enable os: windows-latest
 # TODO: Line 15, enable python-version: 3.5
-# TODO: Line 36, enable pytest --doctest-modules
 
 name: Python_tests
 on: [push, pull_request]
@@ -32,5 +31,5 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: pytest
-      # - name: Run doctests with pytest
-      #   run: pytest --doctest-modules
+      - name: Run doctests with pytest
+        run: pytest --doctest-modules
